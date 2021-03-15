@@ -8,7 +8,7 @@ banners.intTable = function () {
     if (role==='ADMIN'){
         $("#banners-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/banners/',
+                url: url + '/api/banners/',
                 method: "GET",
                 dataType: "json",
                 dataSrc: ""
@@ -55,7 +55,7 @@ banners.intTable = function () {
     }else {
         $("#banners-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/banners/',
+                url: url + '/api/banners/',
                 method: "GET",
                 dataType: "json",
                 dataSrc: ""
@@ -116,7 +116,7 @@ banners.save = function (){
             bannerObj.image = $('#base64').val();
 
             $.ajax({
-                url: baseUrl + "/api/banner/",
+                url: url + "/api/banner/",
                 method: "POST",
                 dataType: "json",
                 contentType: "application/json",
@@ -143,7 +143,7 @@ banners.save = function (){
             bannerObj.dateAdd = $("#dateAdd").val();
 
             $.ajax({
-                url: baseUrl + "/api/banner/",
+                url: url + "/api/banner/",
                 method: "PUT",
                 dataType: "json",
                 contentType: "application/json",
@@ -179,7 +179,7 @@ banners.delete = function (id) {
         callback: function (result) {
             if (result){
                 $.ajax({
-                    url: baseUrl + "/api/banner/" + id,
+                    url: url + "/api/banner/" + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function () {
@@ -198,7 +198,7 @@ banners.delete = function (id) {
 
 banners.get = function (title, id) {
     $.ajax({
-        url: baseUrl + "/api/banner/" + id,
+        url: url + "/api/banner/" + id,
         method: "GET",
         dataType: "json",
         success: function (data){
