@@ -30,7 +30,7 @@ public class Blog {
     private String title;
 
     @NotNull
-    @Size(min =100,max = 10000,message = "Please enter at least 20 characters!")
+    @Size(min =100,max = 10000,message = "Please enter at least 100 characters!")
     @Column(name="content",columnDefinition="TEXT")
     private String content;
 

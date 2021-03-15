@@ -24,8 +24,8 @@ banners.bannerList = function () {
                             `<div class="item active">
                             <img src="${v.image}" alt="New York" width="100%" height="400">
                             <div class="carousel-caption">
-                                <h3>New York</h3>
-                                <p>The atmosphere in New York is lorem ipsum.</p>
+                               
+                                <p>${v.title}</p>
                             </div>
                          </div>`
                         );
@@ -37,8 +37,8 @@ banners.bannerList = function () {
                             `<div class="item">
                             <img src="${v.image}" alt="New York" width="100%" height="400">
                             <div class="carousel-caption">
-                                <h3>New York</h3>
-                                <p>The atmosphere in New York is lorem ipsum.</p>
+                             
+                                <p>${v.title}</p>
                             </div>
                          </div>`
                         );
