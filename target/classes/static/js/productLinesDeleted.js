@@ -1,4 +1,4 @@
-import baseUrl from "./baseUrl";
+var url = "http://musical-store.herokuapp.com"
 
 var productLines = {} || productLines;
 var rates = {} || rates;
@@ -8,7 +8,7 @@ productLines.intTable = function () {
     if (role==="ADMIN"){
         $("#productLines-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/typeProductsDeleted/',
+                url: url + '/api/typeProductsDeleted/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -63,7 +63,7 @@ productLines.intTable = function () {
     }else {
         $("#productLines-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/typeProductsDeleted/',
+                url: url + '/api/typeProductsDeleted/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -125,7 +125,7 @@ productLines.delete = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/typeProductDeleted/" + id,
+                    url: url + "/api/typeProductDeleted/" + id,
                     method: "DELETE",
                     dataType: "json",
                     error:function (jqXHR,exception){
@@ -158,7 +158,7 @@ productLines.undo= function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/typeProductUndo/" + id,
+                    url: url + "/api/typeProductUndo/" + id,
                     method: "PUT",
                     dataType: "json",
                     success: function () {
@@ -175,7 +175,7 @@ productLines.undo= function (id) {
 };
 productLines.getTypeProductDeleted = function (id) {
     $.ajax({
-        url: baseUrl + "/api/typeProductDeleted/" + id,
+        url: url + "/api/typeProductDeleted/" + id,
         method: "GET",
         dataType: "json",
         success: function (data) {

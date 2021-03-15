@@ -1,7 +1,9 @@
 var orders={}||orders;
+// var url = "http://localhost:8080";
+var url = "http://musical-store.herokuapp.com"
 orders.addToCart=function (id) {
     $.ajax({
-        url: baseUrl + '/api/addCart/'+id,
+        url: url + '/api/addCart/'+id,
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -25,7 +27,7 @@ orders.showCart=function () {
         )
     }
     $.ajax({
-        url: baseUrl + '/api/showCart/',
+        url: url + '/api/showCart/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -70,7 +72,7 @@ orders.showCart=function () {
 
 orders.deleteProduct=function (id) {
     $.ajax({
-        url: baseUrl + '/api/deleteProduct/' + id,
+        url: url + '/api/deleteProduct/' + id,
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -82,7 +84,7 @@ orders.deleteProduct=function (id) {
 
 orders.deleteAllProduct=function () {
     $.ajax({
-        url: baseUrl + '/api/deleteALlProduct/',
+        url: url + '/api/deleteALlProduct/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -94,7 +96,7 @@ orders.deleteAllProduct=function () {
 
 orders.checkoutCart=function (){
     $.ajax({
-        url: baseUrl + '/api/checkoutCart/',
+        url: url + '/api/checkoutCart/',
         method: "GET",
         dataType: "json",
         success: function (data) {

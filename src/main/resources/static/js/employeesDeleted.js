@@ -1,6 +1,6 @@
 var employees = {} || employees;
 var vendorsData=[];
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 var rates = {} || rates;
 employees.intTable = function () {

@@ -1,7 +1,7 @@
 var banners = {} || banners;
 var products = {} || products;
 var blogs = {} || blogs;
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 banners.bannerList = function () {
     $.ajax({

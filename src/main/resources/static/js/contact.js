@@ -1,5 +1,5 @@
 var rates = rates || {};
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 rates.create = function () {
     if ($("#formRates").valid()) {

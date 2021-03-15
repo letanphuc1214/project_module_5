@@ -1,4 +1,4 @@
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 var productLines = {} || productLines;
 var rates = {} || rates;

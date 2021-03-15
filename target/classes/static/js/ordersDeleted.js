@@ -1,10 +1,12 @@
 var orders=orders||{};
 var rates=rates||{};
+var url = "http://musical-store.herokuapp.com"
+
 orders.intTableDeleted = function () {
     var id;
     $("#orders-datatables").DataTable({
         ajax: {
-            url: baseUrl + '/api/ordersDelete/',
+            url: url + '/api/ordersDelete/',
             method: "GET",
             datatype: "json",
             dataSrc: ""
@@ -60,7 +62,7 @@ orders.intTableDeleted = function () {
 
 orders.get = function (id) {
     $.ajax({
-        url: baseUrl + "/api/ordersDelete/" + id,
+        url: url + "/api/ordersDelete/" + id,
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -105,7 +107,7 @@ orders.undo = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/undo/" + id,
+                    url: url + "/api/undo/" + id,
                     method: "GET",
                     dataType: "json",
                     success: function (data) {

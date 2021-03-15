@@ -2,7 +2,8 @@ var products = {} || products;
 var rates = {} || rates;
 var employees={}||employees;
 
-var url = "http://localhost:8080";
+// var url = "http://localhost:8080";
+var url = "http://musical-store.herokuapp.com"
 
 products.intTable = function () {
     var id;

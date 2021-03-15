@@ -1,6 +1,6 @@
 var orders={}||orders;
 // var url = "http://localhost:8080";
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 orders.addToCart=function (id) {
     $.ajax({
         url: url + '/api/addCart/'+id,

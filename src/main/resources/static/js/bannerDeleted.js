@@ -1,7 +1,7 @@
 var banners = {} || banners;
 var rates=rates||{};
 // var url = "http://localhost:8080";
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 banners.intTable = function () {
     var id;

@@ -1,6 +1,8 @@
+var url = "http://musical-store.herokuapp.com"
+
 rates.findStatus = function () {
     $.ajax({
-        url: baseUrl + "/api/ratesStatus/",
+        url: url + "/api/ratesStatus/",
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -36,7 +38,7 @@ rates.findStatus = function () {
 
 // employees.findUser = function () {
 //     $.ajax({
-//         url: baseUrl + "/api/employeesName/",
+//         url: url + "/api/employeesName/",
 //         method: "GET",
 //         dataType: "json",
 //         success: function (data) {

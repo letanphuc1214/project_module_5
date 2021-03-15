@@ -1,12 +1,13 @@
 var blogs = {} || blogs;
 var rates = rates || {};
+var url = "http://musical-store.herokuapp.com"
 
 blogs.intTable = function (){
     var role=$('#role').val();
     if (role==='ADMIN'){
         $("#blogs-datatables").DataTable({
             ajax:{
-                url: baseUrl + '/api/blogsDeleted/',
+                url: url + '/api/blogsDeleted/',
                 method: 'GET',
                 dataType: 'json',
                 dataSrc: ''
@@ -39,7 +40,7 @@ blogs.intTable = function (){
     }else {
         $("#blogs-datatables").DataTable({
             ajax:{
-                url: baseUrl + '/api/blogsDeleted/',
+                url: url + '/api/blogsDeleted/',
                 method: 'GET',
                 dataType: 'json',
                 dataSrc: ''
@@ -82,7 +83,7 @@ blogs.delete = function (id){
         callback: function (result){
             if (result){
                 $.ajax({
-                    url: baseUrl + '/api/blogDeleted/' + id,
+                    url: url + '/api/blogDeleted/' + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function (){
@@ -114,7 +115,7 @@ blogs.undo = function (id){
         callback: function (result){
             if (result){
                 $.ajax({
-                    url: baseUrl + '/api/blogUndo/' + id,
+                    url: url + '/api/blogUndo/' + id,
                     method: 'PUT',
                     dataType: 'json',
                     success: function (){

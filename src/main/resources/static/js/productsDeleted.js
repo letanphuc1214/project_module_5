@@ -1,6 +1,6 @@
 var products = {} || products;
 var rates = {} || rates;
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 products.intTable = function () {
     var id;

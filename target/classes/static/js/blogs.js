@@ -1,11 +1,13 @@
 var blogs = {} || blogs;
 var rates = rates || {};
+var url = "http://musical-store.herokuapp.com"
+
 blogs.intTable = function () {
     var role=$('#role').val();
     if (role==='ADMIN'){
         $("#blogs-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/blogs/',
+                url: url + '/api/blogs/',
                 method: "GET",
                 dataType: "json",
                 dataSrc: ""
@@ -42,7 +44,7 @@ blogs.intTable = function () {
     }else {
         $("#blogs-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/blogs/',
+                url: url + '/api/blogs/',
                 method: "GET",
                 dataType: "json",
                 dataSrc: ""
@@ -88,7 +90,7 @@ blogs.save = function () {
         blogObj.image = $('#base64').val();
         blogObj.content = $('#content').val();
         $.ajax({
-            url: baseUrl + '/api/blog/',
+            url: url + '/api/blog/',
             method: 'POST',
             dataType: 'json',
             contentType: 'application/json',
@@ -122,7 +124,7 @@ blogs.update = function (){
         blogObj.dateAdd = $('#dateAdd').val();
         console.log(blogObj)
         $.ajax({
-            url: baseUrl + '/api/blog/',
+            url: url + '/api/blog/',
             method: 'PUT',
             dataType: 'json',
             contentType: 'application/json',
@@ -143,7 +145,7 @@ blogs.update = function (){
 blogs.get = function (){
     var id = $('#id').val();
     $.ajax({
-        url: baseUrl + '/api/blog/' + id,
+        url: url + '/api/blog/' + id,
         method: 'GET',
         dataType: 'json',
         success: function (data){
@@ -154,7 +156,7 @@ blogs.get = function (){
 
 blogs.view = function (id){
     $.ajax({
-        url: baseUrl + '/api/blog/' + id,
+        url: url + '/api/blog/' + id,
         method: 'GET',
         dataType: 'json',
         success: function (data){
@@ -188,7 +190,7 @@ blogs.delete = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + '/api/blog/' + id,
+                    url: url + '/api/blog/' + id,
                     method: 'DELETE',
                     dataType: 'json',
                     success: function () {

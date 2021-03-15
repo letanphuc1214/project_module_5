@@ -1,5 +1,5 @@
 var users = {} || users;
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 users.create = function () {
     if ($("#formRegister").valid()) {

@@ -1,4 +1,5 @@
 var users = {} || users;
+var url = "http://musical-store.herokuapp.com"
 
 users.create = function () {
     if ($("#formRegister").valid()) {
@@ -15,7 +16,7 @@ users.create = function () {
         user.image = $('#base64').val();
         user.dateOfBirth = $('#dateOfBirth').val();
         $.ajax({
-            url: baseUrl + "/api/users/",
+            url: url + "/api/users/",
             method: "POST",
             dataType: 'json',
             contentType: "application/json",
@@ -51,7 +52,7 @@ users.create = function () {
 //         user.image = $('#image').val();
 //         user.dateOfBirth = $('#dateOfBirth').val();
 //         $.ajax({
-//             url: baseUrl + "/api/users/",
+//             url: url + "/api/users/",
 //             method: "POST", //"POST"
 //             dataType: 'json',
 //             contentType: "application/json",

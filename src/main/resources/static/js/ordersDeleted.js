@@ -1,6 +1,6 @@
 var orders=orders||{};
 var rates=rates||{};
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 orders.intTableDeleted = function () {
     var id;

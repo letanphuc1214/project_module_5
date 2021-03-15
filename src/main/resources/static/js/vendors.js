@@ -1,6 +1,6 @@
 var vendors = {} || vendors;
 var rates = {} || rates;
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 vendors.intTable = function () {
     var id;
@@ -8,7 +8,7 @@ vendors.intTable = function () {
     if (role==="ADMIN"){
         $("#vendors-datatables").DataTable({
             ajax: {
-                url: url + '/api/vendors/',
+                url: baseUrl + '/api/vendors/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -68,7 +68,7 @@ vendors.intTable = function () {
     }else {
         $("#vendors-datatables").DataTable({
             ajax: {
-                url: url + '/api/vendors/',
+                url: baseUrl + '/api/vendors/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -142,7 +142,7 @@ vendors.save = function () {
             vendorObj.image = $('#base64').val();
             //
             $.ajax({
-                url: url + "/api/vendor/",
+                url: baseUrl + "/api/vendor/",
                 method: "POST",
                 dataType: "json",
                 contentType: "application/json",
@@ -173,7 +173,7 @@ vendors.save = function () {
             vendorObj.dateAdd = $('#dateAdd').val();
             //
             $.ajax({
-                url: url + "/api/vendor/",
+                url: baseUrl + "/api/vendor/",
                 method: "PUT",
                 dataType: "json",
                 contentType: "application/json",
@@ -210,7 +210,7 @@ vendors.delete = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: url + "/api/vendor/" + id,
+                    url: baseUrl + "/api/vendor/" + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function () {
@@ -228,7 +228,7 @@ vendors.delete = function (id) {
 
 vendors.get = function (title,id) {
     $.ajax({
-        url: url + "/api/vendor/" + id,
+        url: baseUrl + "/api/vendor/" + id,
         method: "GET",
         dataType: "json",
         success: function (data) {

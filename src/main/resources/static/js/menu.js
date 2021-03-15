@@ -1,7 +1,7 @@
 var productLines = {} || productLines;
 var vendors = {} || vendors;
 var orders={}|orders;
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 //productLines
 productLines.listType = function () {

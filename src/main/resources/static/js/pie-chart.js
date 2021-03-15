@@ -2,7 +2,7 @@ var productLines = {} || productLines;
 var vendors = {} || vendors;
 var rates = {} || rates;
 var canvas={}||canvas;
-var url = "http://musical-store.herokuapp.com"
+var url = "https://musical-store.herokuapp.com"
 
 var listType;
 var listCountProductByType;

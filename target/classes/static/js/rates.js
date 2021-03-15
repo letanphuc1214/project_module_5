@@ -1,10 +1,12 @@
 var rates = {} || rates;
+var url = "http://musical-store.herokuapp.com"
+
 rates.intTable = function () {
     var role=$('#role').val();
     if (role==='ADMIN'){
         $("#rates-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/rates/',
+                url: url + '/api/rates/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -53,7 +55,7 @@ rates.intTable = function () {
     }else {
         $("#rates-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/rates/',
+                url: url + '/api/rates/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -117,7 +119,7 @@ rates.delete = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/rate/" + id,
+                    url: url + "/api/rate/" + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function () {
@@ -136,7 +138,7 @@ rates.delete = function (id) {
 
 rates.get = function (id) {
     $.ajax({
-        url: baseUrl + "/api/rate/" + id,
+        url: url + "/api/rate/" + id,
         method: "GET",
         dataType: "json",
         success: function (data) {
