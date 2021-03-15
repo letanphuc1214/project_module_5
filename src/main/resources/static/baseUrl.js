@@ -1,1 +1,0 @@
-var baseUrl = 'musical-store.herokuapp.com'

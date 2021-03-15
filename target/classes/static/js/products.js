@@ -1,13 +1,16 @@
 var products = {} || products;
 var rates = {} || rates;
 var employees={}||employees;
+
+var url = "http://localhost:8080";
+
 products.intTable = function () {
     var id;
     var role=$('#role').val();
     if (role==='ADMIN'){
         $("#products-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/products/',
+                url:  url + '/api/products/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -61,7 +64,7 @@ products.intTable = function () {
     }else {
         $("#products-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/products/',
+                url: url + '/api/products/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -138,7 +141,7 @@ products.save = function () {
             console.log(productObj);
             //
             $.ajax({
-                url: baseUrl + "/api/product/",
+                url: url + "/api/product/",
                 method: "POST",
                 dataType: "json",
                 contentType: "application/json",
@@ -173,7 +176,7 @@ products.save = function () {
             productObj.dateAdd = $('#dateAdd').val();
             //
             $.ajax({
-                url: baseUrl + "/api/product/",
+                url: url + "/api/product/",
                 method: "PUT",
                 dataType: "json",
                 contentType: "application/json",
@@ -210,7 +213,7 @@ products.delete = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/product/" + id,
+                    url: url + "/api/product/" + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function () {
@@ -228,7 +231,7 @@ products.delete = function (id) {
 
 products.get = function (title,id) {
     $.ajax({
-        url: baseUrl + "/api/product/" + id,
+        url: url + "/api/product/" + id,
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -278,7 +281,7 @@ var types=types||{};
 var typeData=[];
 types.initTypes = function () {
     $.ajax({
-        url: baseUrl + "/api/typeProducts/",
+        url: url + "/api/typeProducts/",
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -303,7 +306,7 @@ var vendors=vendors||{};
 var vendorData=[];
 vendors.initVendors = function () {
     $.ajax({
-        url: baseUrl + "/api/vendors/",
+        url: url + "/api/vendors/",
         method: "GET",
         dataType: "json",
         success: function (data) {

@@ -1,12 +1,14 @@
 var productLines = {} || productLines;
 var rates = {} || rates;
+var url = "http://musical-store.herokuapp.com"
+
 productLines.intTable = function () {
     var id;
     var role=$('#role').val();
     if (role==="ADMIN"){
         $("#productLines-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/typeProducts/',
+                url: url + '/api/typeProducts/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -57,7 +59,7 @@ productLines.intTable = function () {
     }else {
         $("#productLines-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/typeProducts/',
+                url: url + '/api/typeProducts/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -121,7 +123,7 @@ productLines.save = function () {
             typeObj.image = $('#base64').val();
             //
             $.ajax({
-                url: baseUrl + "/api/typeProduct/",
+                url: url + "/api/typeProduct/",
                 method: "POST",
                 dataType: "json",
                 contentType: "application/json",
@@ -149,7 +151,7 @@ productLines.save = function () {
             typeObj.image = $('#base64').val();
             //
             $.ajax({
-                url: baseUrl + "/api/typeProduct/",
+                url: url + "/api/typeProduct/",
                 method: "PUT",
                 dataType: "json",
                 contentType: "application/json",
@@ -185,7 +187,7 @@ productLines.delete = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/typeProduct/" + id,
+                    url: url + "/api/typeProduct/" + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function () {
@@ -203,7 +205,7 @@ productLines.delete = function (id) {
 
 productLines.get = function (title,id) {
     $.ajax({
-        url: baseUrl + "/api/typeProduct/" + id,
+        url: url + "/api/typeProduct/" + id,
         method: "GET",
         dataType: "json",
         success: function (data) {

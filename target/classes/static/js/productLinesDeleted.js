@@ -1,3 +1,5 @@
+import baseUrl from "./baseUrl";
+
 var productLines = {} || productLines;
 var rates = {} || rates;
 productLines.intTable = function () {

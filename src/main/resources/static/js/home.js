@@ -1,9 +1,11 @@
 var banners = {} || banners;
 var products = {} || products;
 var blogs = {} || blogs;
+var url = "http://musical-store.herokuapp.com"
+
 banners.bannerList = function () {
     $.ajax({
-        url: baseUrl + '/api/banners/',
+        url: url + '/api/banners/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -54,7 +56,7 @@ banners.bannerList = function () {
 var orders={}||orders;
 products.new4products = function () {
     $.ajax({
-        url: baseUrl + '/api/newFourProducts/',
+        url: url + '/api/newFourProducts/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -86,7 +88,7 @@ products.new4products = function () {
 }
 blogs.new4blogs = function () {
     $.ajax({
-        url: baseUrl + '/api/newFourBlogs/',
+        url: url + '/api/newFourBlogs/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -118,7 +120,7 @@ blogs.new4blogs = function () {
 //Page Blogs
 blogs.new8blogs = function () {
     $.ajax({
-        url: baseUrl + '/api/newEightBlogs/',
+        url: url + '/api/newEightBlogs/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -169,7 +171,7 @@ blogs.new8blogs = function () {
 blogs.view = function () {
     var id = $("#id").val();
     $.ajax({
-        url: baseUrl + '/api/blog/' + id,
+        url: url + '/api/blog/' + id,
         method: 'GET',
         dataType: 'json',
         success: function (data) {

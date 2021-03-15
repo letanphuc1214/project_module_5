@@ -1,10 +1,12 @@
 var employees = {} || employees;
 var vendorsData=[];
+var url = "http://musical-store.herokuapp.com"
+
 var rates = {} || rates;
 employees.intTable = function () {
     $("#employees-datatables").DataTable({
         ajax: {
-            url: baseUrl + '/api/employeesDeleted/',
+            url: url + '/api/employeesDeleted/',
             method: "GET",
             datatype: "json",
             dataSrc: ""
@@ -64,7 +66,7 @@ employees.delete = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/employeesDeleted/" + id,
+                    url: url + "/api/employeesDeleted/" + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function () {
@@ -97,7 +99,7 @@ employees.undo= function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/employeeUndo/" + id,
+                    url: url + "/api/employeeUndo/" + id,
                     method: "PUT",
                     dataType: "json",
                     success: function () {

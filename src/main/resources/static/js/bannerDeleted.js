@@ -1,5 +1,7 @@
 var banners = {} || banners;
 var rates=rates||{};
+// var url = "http://localhost:8080";
+var url = "http://musical-store.herokuapp.com"
 
 banners.intTable = function () {
     var id;
@@ -7,7 +9,7 @@ banners.intTable = function () {
     if (role==='ADMIN'){
         $('#banners-datatables').DataTable({
             ajax: {
-                url: baseUrl + '/api/bannersDeleted/',
+                url: url + '/api/bannersDeleted/',
                 method: 'GET',
                 dataType: 'json',
                 dataSrc: ''
@@ -49,7 +51,7 @@ banners.intTable = function () {
     }else {
         $('#banners-datatables').DataTable({
             ajax: {
-                url: baseUrl + '/api/bannersDeleted/',
+                url: url + '/api/bannersDeleted/',
                 method: 'GET',
                 dataType: 'json',
                 dataSrc: ''
@@ -84,7 +86,7 @@ banners.intTable = function () {
 
 banners.getBannerDeleted = function (id) {
     $.ajax({
-        url: baseUrl + "/api/bannerDeleted/" + id,
+        url: url + "/api/bannerDeleted/" + id,
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -121,7 +123,7 @@ banners.delete = function (id){
         callback: function (result){
             if (result){
                 $.ajax({
-                    url: baseUrl + '/api/bannerDeleted/' + id,
+                    url: url + '/api/bannerDeleted/' + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function (){
@@ -152,7 +154,7 @@ banners.undo = function (id){
         },
         callback: function (result){
             $.ajax({
-                url: baseUrl + '/api/bannerUndo/' + id,
+                url: url + '/api/bannerUndo/' + id,
                 method: "PUT",
                 dataType: "json",
                 success: function (){

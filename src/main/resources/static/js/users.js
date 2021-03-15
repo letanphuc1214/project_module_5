@@ -1,9 +1,11 @@
 var users = {} || users;
 var rates = {} || rates;
+var url = "http://musical-store.herokuapp.com"
+
 users.intTable = function () {
     $("#users-dataTable").DataTable({
         ajax: {
-            url: baseUrl + '/api/users/',
+            url: url + '/api/users/',
             method: "GET",
             datatype: "json",
             dataSrc: ""
@@ -69,7 +71,7 @@ users.save = function () {
             user.image = $('#image').val();
             user.dateOfBirth = $('#dateOfBirth').val();
             $.ajax({
-                url: baseUrl + "/api/users/",
+                url: url + "/api/users/",
                 method: "POST", //"POST"
                 dataType: 'json',
                 contentType: "application/json",
@@ -102,7 +104,7 @@ users.save = function () {
             user.id = $('#id').val();
             user.dateUpdate = new Date(Date.UTC);
             $.ajax({
-                url: baseUrl + "/api/users/",
+                url: url + "/api/users/",
                 method: "PUT",
                 dataType: "json",
                 contentType: "application/json",
@@ -142,7 +144,7 @@ users.delete = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/users/" + id,
+                    url: url + "/api/users/" + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function () {
@@ -160,7 +162,7 @@ users.delete = function (id) {
 
 users.get = function (id) {
     $.ajax({
-        url: baseUrl + "/api/users/" + id,
+        url: url + "/api/users/" + id,
         method: "GET",
         dataType: "json",
         success: function (data) {

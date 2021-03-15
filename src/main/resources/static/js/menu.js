@@ -1,10 +1,12 @@
 var productLines = {} || productLines;
 var vendors = {} || vendors;
 var orders={}|orders;
+var url = "http://musical-store.herokuapp.com"
+
 //productLines
 productLines.listType = function () {
     $.ajax({
-        url: baseUrl + '/api/listTypeProductsById/',
+        url: url + '/api/listTypeProductsById/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -105,13 +107,13 @@ productLines.listProducts=function(id,page){
     }
     var search = $('#str').val();
     $.ajax({
-        url: baseUrl + '/api/typeProduct/' +id,
+        url: url + '/api/typeProduct/' +id,
         method: "GET",
         dataType: "json",
         success: function (data) {
             $('#nameTypeVendor').html(data.name)
             $.ajax({
-                url: baseUrl + '/api/productsByIdTypeProduct/'+id+'?page='+page+"&search="+search,
+                url: url + '/api/productsByIdTypeProduct/'+id+'?page='+page+"&search="+search,
                 method: "GET",
                 dataType: "json",
                 success: function (data) {
@@ -174,7 +176,7 @@ productLines.listProductsById=function(page){
     }
     if (idType!=""){
         $.ajax({
-            url: baseUrl + '/api/productsByIdTypeProduct/'+idType+'?page='+page+"&search="+search,
+            url: url + '/api/productsByIdTypeProduct/'+idType+'?page='+page+"&search="+search,
             method: "GET",
             dataType: "json",
             success: function (data) {
@@ -231,7 +233,7 @@ productLines.listProductsById=function(page){
 vendors.listVendors= function () {
     if ($('#allVendor').empty()){
     $.ajax({
-        url: baseUrl + '/api/listVendorsById/',
+        url: url + '/api/listVendorsById/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -256,13 +258,13 @@ vendors.listProducts=function(id,page){
     }
     var search = $('#str').val();
     $.ajax({
-        url: baseUrl + '/api/vendor/' +id,
+        url: url + '/api/vendor/' +id,
         method: "GET",
         dataType: "json",
         success: function (data) {
             $('#nameTypeVendor').html(data.name)
             $.ajax({
-                url: baseUrl + '/api/productsByVendorId/'+id+'?page='+page+"&search="+search,
+                url: url + '/api/productsByVendorId/'+id+'?page='+page+"&search="+search,
                 method: "GET",
                 dataType: "json",
                 success: function (data) {
@@ -325,14 +327,14 @@ vendors.listProductsById=function(page){
     }
     if (idVendor!=""){
         $.ajax({
-            url: baseUrl + '/api/vendor/' + idVendor,
+            url: url + '/api/vendor/' + idVendor,
             method: "GET",
             dataType: "json",
             success: function (data) {
                 $('#nameTypeVendor').html(data.name);
 
                 $.ajax({
-                    url: baseUrl + '/api/productsByVendorId/' + idVendor + '?page=' + page + "&search=" + search,
+                    url: url + '/api/productsByVendorId/' + idVendor + '?page=' + page + "&search=" + search,
                     method: "GET",
                     dataType: "json",
                     success: function (data) {

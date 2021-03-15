@@ -2,6 +2,7 @@ var productLines = {} || productLines;
 var vendors = {} || vendors;
 var rates = {} || rates;
 var canvas={}||canvas;
+var url = "http://musical-store.herokuapp.com"
 
 var listType;
 var listCountProductByType;
@@ -14,7 +15,7 @@ var hexVendor;
 
 productLines.listType = function () {
     $.ajax({
-        url: baseUrl + '/api/listTypeProductsById/',
+        url: url + '/api/listTypeProductsById/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -25,7 +26,7 @@ productLines.listType = function () {
                 hexType[i]='#'+((Math.random()/i)*0xFFFFFF<<0).toString(16);
                 listType[i]=v.name;
                 $.ajax({
-                    url: baseUrl + '/api/productsByIdType/'+data[i].id,
+                    url: url + '/api/productsByIdType/'+data[i].id,
                     method: "GET",
                     dataType: "json",
                     success: function (data) {
@@ -41,7 +42,7 @@ productLines.listType = function () {
 
 vendors.listVendor = function () {
     $.ajax({
-        url: baseUrl + '/api/listVendorsById/',
+        url: url + '/api/listVendorsById/',
         method: "GET",
         dataType: "json",
         success: function (data) {
@@ -52,7 +53,7 @@ vendors.listVendor = function () {
                 hexVendor[i]='#'+((Math.random()/i)*0xFFFFFF<<0).toString(16);
                 listVendor[i]=v.name;
                 $.ajax({
-                    url: baseUrl + '/api/productsByIdVendor/'+data[i].id,
+                    url: url + '/api/productsByIdVendor/'+data[i].id,
                     method: "GET",
                     dataType: "json",
                     success: function (data) {

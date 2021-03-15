@@ -1,12 +1,14 @@
 var vendors = {} || vendors;
 var rates = {} || rates;
+var url = "http://musical-store.herokuapp.com"
+
 vendors.intTable = function () {
     var id;
     var role=$('#role').val();
     if (role==="ADMIN"){
         $("#vendors-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/vendorsDeleted/',
+                url: url + '/api/vendorsDeleted/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -70,7 +72,7 @@ vendors.intTable = function () {
     }else {
         $("#vendors-datatables").DataTable({
             ajax: {
-                url: baseUrl + '/api/vendorsDeleted/',
+                url: url + '/api/vendorsDeleted/',
                 method: "GET",
                 datatype: "json",
                 dataSrc: ""
@@ -137,7 +139,7 @@ vendors.delete = function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/vendorDeleted/" + id,
+                    url: url + "/api/vendorDeleted/" + id,
                     method: "DELETE",
                     dataType: "json",
                     success: function () {
@@ -170,7 +172,7 @@ vendors.undo= function (id) {
         callback: function (result) {
             if (result) {
                 $.ajax({
-                    url: baseUrl + "/api/vendorUndo/" + id,
+                    url: url + "/api/vendorUndo/" + id,
                     method: "PUT",
                     dataType: "json",
                     success: function () {
@@ -187,7 +189,7 @@ vendors.undo= function (id) {
 };
 vendors.getVendorDeleted = function (id) {
     $.ajax({
-        url: baseUrl + "/api/vendorDeleted/" + id,
+        url: url + "/api/vendorDeleted/" + id,
         method: "GET",
         dataType: "json",
         success: function (data) {

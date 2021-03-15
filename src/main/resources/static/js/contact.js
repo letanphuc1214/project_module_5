@@ -1,4 +1,6 @@
 var rates = rates || {};
+var url = "http://musical-store.herokuapp.com"
+
 rates.create = function () {
     if ($("#formRates").valid()) {
         var rateObj ={};
@@ -6,7 +8,7 @@ rates.create = function () {
         rateObj.email = $('#mail').val();
         rateObj.content = $('#content').val();
         $.ajax({
-            url: baseUrl + "/api/rate/",
+            url: url + "/api/rate/",
             method: "POST",
             dataType: 'json',
             contentType: "application/json",
